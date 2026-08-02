@@ -8,4 +8,5 @@ export PATH="$PWD/dotnet:$PATH"
 dotnet publish Portfolio/Portfolio.csproj -c Release -o output
 
 echo "===== OUTPUT ====="
+
 find output -maxdepth 3
