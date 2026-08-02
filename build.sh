@@ -10,6 +10,6 @@ chmod +x dotnet-install.sh
 
 ./dotnet/dotnet --version
 
-./dotnet publish Portfolio/Portfolio.Client/Portfolio.Client.csproj \
+./dotnet/dotnet publish Portfolio/Portfolio.Client/Portfolio.Client.csproj \
     -c Release \
     -o output
