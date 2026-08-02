@@ -1,14 +1,13 @@
 #!/bin/sh
-
 set -e
 
-curl -sSL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
-chmod +x dotnet-install.sh
+# Install .NET
+curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 10.0 --install-dir "$HOME/.dotnet"
 
-./dotnet-install.sh -c 10.0 -InstallDir ./dotnet
+export PATH="$HOME/.dotnet:$PATH"
 
-./dotnet/dotnet --info
+dotnet --info
 
-./dotnet/dotnet publish Portfolio.Client/Portfolio.Client.csproj \
+dotnet publish Portfolio.Client/Portfolio.Client.csproj \
     -c Release \
     -o output
