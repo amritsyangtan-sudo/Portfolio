@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+curl -sSL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
+chmod +x dotnet-install.sh
+
+./dotnet-install.sh -c 10.0 -InstallDir ./dotnet
+
+./dotnet/dotnet --info
+
+./dotnet/dotnet publish Portfolio.Client/Portfolio.Client.csproj \
+    -c Release \
+    -o output
